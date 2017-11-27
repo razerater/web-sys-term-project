@@ -1,3 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="resources/login.css" type="text/css" />
+		<link rel="stylesheet" href="resources/header.css" type="text/css" />
+	</head>
+	<body>
+		<div id="header">
+			<div id="red-top"></div>
+			<div id="header-block">
+				<div id="logo">
+					<a href="index.php"><img src="resources/images/RPIlogo.png" alt="logo";"></a>
+				</div>
+				<div id="login-topRight">
+					<a class="white-link" href="login.php">RA/RD/AD Log in</a><br>
+					<a class="white-link" href="signup.php">Create account</a>
+				</div>
+			</div>
+
+			<!-- The navigation bar -->
+			<div id="nav-bar">
+				<ul id="nav-list">
+					<li class="nav-item"><a class="nav-item" href="aboutUs.php">About ResLife</a></li>
+					<li class="nav-item"><a class="nav-item" href="activityCalendar.php">Activity Calendar</a></li>
+					<li class="nav-item"><a class="nav-item" href="generalForm.php">General Form</a></li>
+					<li class="nav-item"><a class="nav-item" href="contactUs.php">Contact RPI ResLife</a></li>
+				</ul>
+			</div>
+		</div>
+		<!--====================login box===================-->
+		<div id="login-centered">
+			<div id="login-box">
+				<div id="login-header">RA/RD/AD Login</div>
+				<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+					<label>Email: </label>
+					<div class="login-value"><input type="text" name="email"/></div>
+					<label>Password: </label>
+					<div class="login-value"><input type="password" name="password"/></div>
+
+					<input type="submit" value="Log in" id="login-login" name="submit"/>
+				</form>
+				<p class="login-registerNowText">Don't have an account?</p>
+          		<button type="button" class="login-registerNow" onclick="location.href='signup.php'">Sign Up Now!</button>
+			</div>
+		</div>
+		
+
+		<div id="footer">
+			
+		</div>
+	</body>
+	
+</html>
+
+
 <?php
 session_start();
 ob_start();
@@ -51,18 +106,3 @@ if(isset($_POST['submit'])) {
 	}
 }
 ?>
-
-
-<html>
-	<h1>Login Page</h1>
-	<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
-		<label>Email: </label>
-		<input type="text" name="email"/><br>
-		<label>Password: </label>
-		<input type="password" name="password"/><br>
-
-		<input type="submit" value="Log in" name="submit">
-	</form>
-	<a href="signup.php">Dont have an account? Click here</a>
-	<a href="landing.php">Landing Page</a>
-</html>
