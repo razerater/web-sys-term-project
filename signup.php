@@ -3,7 +3,7 @@ ob_start();
 session_start();
 
 if( isset($_SESSION['user'])!="" ) {
-	header("Location: landing.php");
+	header("Location: dashboard/index.php");
 }
 
 include_once 'dbconnect.php';
@@ -49,14 +49,19 @@ if ( isset($_POST['submit']) ) {
 
 	if( !$error ) {
 		$sql = "INSERT INTO accounts (email, password, accountType) VALUES ('$email', '$hashpass', '$accountType')";
+
 		if(!mysql_query($sql)) {
 			die('Error: ' . mysql_error());
 		}
-		echo "Email: ".$email."<br>";
-		echo "Password: ".$password."<br>";
-		echo "Hashed password: ".$hashpass."<br>";
-		echo "Account type: ".$accountType."<br>";
-		echo "Code: ".$code;
+		$sql = mysql_query("SELECT * FROM accounts WHERE email = '$email'");
+		$row = mysql_fetch_array($sql);
+		$_SESSION['user'] = $row['ID'];
+		// echo "Email: ".$email."<br>";
+		// echo "Password: ".$password."<br>";
+		// echo "Hashed password: ".$hashpass."<br>";
+		// echo "Account type: ".$accountType."<br>";
+		// echo "Code: ".$code;
+		header("location: dashboard/index.php");
 	} else {
 		echo $errorText;
 	}
@@ -83,6 +88,6 @@ if ( isset($_POST['submit']) ) {
 		<input type="submit" value="Create account" name="submit">
 	</form>
 	<a href="login.php">Already created account? Click here to log in</a>
-	<a href="landing.php">Landing Page</a>
+	<a href="index.php">Landing Page</a>
 </html>
 
