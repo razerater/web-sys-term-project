@@ -23,7 +23,8 @@
 				<ul id="nav-list">
 					<li class="nav-item"><a class="nav-item" href="aboutUs.php">About ResLife</a></li>
 					<li class="nav-item"><a class="nav-item" href="activityCalendar.php">Activity Calendar</a></li>
-					<li class="nav-item"><a class="nav-item" href="generalForm.php">General Form</a></li>
+					<li class="nav-item"><a class="nav-item" href="partner_proposal_form.php">General Form</a></li>
+					<li class="nav-item"><a class="nav-item" href="program_evaluation.php">Evaluation Form</a></li>
 					<li class="nav-item"><a class="nav-item" href="contactUs.php">Contact RPI ResLife</a></li>
 				</ul>
 			</div>
@@ -35,7 +36,7 @@
 			<div id="welcome-text">
 			For Clubs and <br>
 			Other Organization: <br>
-			<a class="white-link" href="generalForm.php">Click here for submitting an idea</a>
+			<a class="white-link" href="partner_proposal_form.php">Click here for submitting an idea</a>
 			</div>
 		</div>
 		
