@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Term Project</title>
+  <link rel="stylesheet" href="resources/static/semantic.min.css">
+  <link rel="stylesheet" href="resources/static/style.css">
+  <link rel="stylesheet" href="resources/static/font-awesome.css">
+</head>
+
+<body>
+  <div>
+    <div id="categories"> <!--The left dashboard -->
+      <div id="cat-header">
+        <h2><img src="resources/static/whtsealm.png" style="width: 30px; height: 30px"></i>    Dashboard</h2>
+      </div>
+      <div class="container">
+        
+        <div class="ui list">
+          <div class="item clickable">
+            <div class="content">
+              <a class="item">
+                <div class="ui left dropdown item" style="padding-bottom: 0 !important;"> <!--Item will have 30px padding -->
+   				       <i class="icon plus"></i> Submit forms                     <!--Here are two items, so the padding would be 60px, wrong -->
+                  <div class="menu">                                        <!--Therefore, overide padding here ONLY -->
+                    <div class="item"><i class="write square icon"></i>Small Community Form</div>
+                    <div class="item"><i class="write square icon"></i>Big Community Form</div>
+                  </div>
+                </div>
+  			      </a>
+            </div>
+          </div>
+
+          <div class="item clickable">
+            <div class="content">
+              <a class="item">
+   				<i class="icon checkmark box"></i> View Forms
+  			  </a>
+            </div>
+          </div>
+
+          <div class="item clickable">
+            <div class="content">
+              <a class="item">
+   				<i class="icon calendar"></i> Calendar
+  			  </a>
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="links-container">  <!-- Right Side Content Container -->
+    <div id="toolbar">
+      <div class="ui inverted icon fluid input" style="float: right; padding-top: 5px"> <!-- Profile Container -->
+        <div class="ui inline dropdown" style=" padding-top: 7px">
+            <div class="text">
+              <a class="ui image label" style="font-size: medium;"> 
+               <img src="resources/static/person.png">
+               Tom
+               <div class="detail">RD</div>
+              </a>
+            </div>
+            <i class="dropdown icon"></i>
+            <div class="menu">
+              
+              <div class="item">
+                Sign Out
+              </div>
+            </div>
+        </div>        
+
+      </div><!-- Top Profile Bar -->
+    </div>
+<!-- Right Side Container below toolbar -->
+    <div class="ui relaxed divided selection list">
+      <!-- Annoucement Section -->
+      <div class="ui blue message" style="margin:auto;"><!-- Welcome Section -->        
+        Role FirstName, Welcome to RPI ResLife Management System!        
+      </div> 
+
+      <div class="ui feed" id="TrackStatus" style="display:;"> <!-- Summanry php requires-->
+        <div class="event"> 
+          <div class="label">
+            <i class="alarm outline icon"></i>
+          </div>
+          <div class="content">
+            <div class="summary">
+              You have submitted <a>NUMBER</a> forms.
+            </div>
+            <div class="extra text">
+              <a>NUMBER</a> form(s) has been approved. <!-- AD: xxx need to be arppoved-->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui raised very padded text container segment"> <!-- Forms AJAX requires-->
+        <h2>Small Community Program Proposal</h2>
+        <!-- Name values are selectors for posting to php -->
+        <form class="ui form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+          <label>Name</label>
+          <input type="text" name="name"/><br>
+          <label>RPI Email</label>
+          <input type="text" name="email"/><br>
+          <label>Building</label>
+          <input type="text" name="building"/><br>
+          <label>Program Date</label>
+          <input type="date" name="date"/><br>
+          <label>Program Time</label>
+          <input type="time" name="time"/><br>
+          <label>Program Location</label>
+          <input type="text" name="location"/><br>
+          <label>Title</label>
+          <input type="text" name="title"/><br>
+          <label>Description</label><br>
+          <textarea name="description" rows="5" cols="50"></textarea><br>
+          <label>Learning objective (one)</label>
+          <input type="text" name="learningObjective"/><br>
+          <label>Pre Assessment Questions</label><br>
+          <input type="text" name="q1"/><br>
+          <input type="text" name="q2"/><br>
+          <input type="text" name="q3"/><br>
+          <label>Budget Propsal</label>
+          <input type="number" name="budget"/><br>
+          <!-- The [] at the end of itemName and itemCost signify an array type.  -->
+          <div id="costList">
+          <label>Item Costs</label>
+          <input type="text" name="itemName[]"/>
+          <input type="number" name="itemCost[]"/>
+          <button type="button" id="addItem">Add item</button><br>
+          </div><br>
+          <input class="ui primary button submitbutton" type="submit" value="Submit" name="submit">
+          <br>
+        </form>
+      </div>
+
+    </div>
+  </div>
+    
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="resources/static/semantic.min.js"></script>
+  <script src="resources/static/main.js"></script>
+</body>
+
+</html>
