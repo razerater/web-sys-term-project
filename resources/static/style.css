@@ -1,3 +1,5 @@
+/*CSS settings for dashboard*/
+/*Qiao*/
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,300);
 body {
   margin: 0;
@@ -8,12 +10,30 @@ body {
   max-height: 100%;
 }
 
+.singleform {
+  height: 100%;
+  overflow: auto;
+  background-color: #D4D9DA;
+  color: #5F676A;
+}
+
+.singleform h2 {
+  font-size: 3em;
+  text-align: center;
+  margin-top: 2%;
+}
+
 .right-float {
   float: right;
 }
 
 .selected {
   color: #87568D;
+}
+
+.ui.dropdown .menu {
+  margin-left: 9em;
+  margin-top: -1.5em;
 }
 
 #categories {
@@ -24,7 +44,6 @@ body {
   left: 0;
   width: 15%;
   height: 100%;
-  overflow: hidden;
   color: #94999d;
 }
 
@@ -38,14 +57,18 @@ body {
 
 }
 
-#categories h2 {
-  margin-top: 15px;
-  margin-left: 5px;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  /* text-transform: uppercase;*/
+#links-container .ui.inline.dropdown .menu { /* profile dropdown*/
+  margin-top: 0.81428571em;
+  margin-left: 3.61428571em;
 }
+
+#links-container .ui.relaxed.divided.selection.list { /* Annoucement Section Layout*/
+  margin-top: 4%;
+  margin-left: 2%;
+  margin-right: 2%;
+  
+}
+
 
 #cat-header {
   background-color: #4A5557;
@@ -55,9 +78,10 @@ body {
 
 #cat-header h2 {
   font-family: 'Raleway', sans-serif !important;
-  font-weight: 300;
-  font-size: 23px;
-  /* text-transform: uppercase;*/
+  font-weight: 200;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  color: rgb(193, 193, 193);
   position: absolute;
   bottom: 10px;
   left: 15px;
@@ -74,10 +98,7 @@ body {
   transition: opacity .25s ease-in-out;
 }
 
-.clickable:hover {
-  cursor: pointer;
-  opacity: 0.5;
-}
+
 
 #categories button {
   position: absolute;
@@ -132,6 +153,11 @@ div.content:hover i.remove.icon {
 
 #links-container .list .item {
   padding: 15px;
+}
+
+.ui.form .submitbutton {
+  float: right;
+  clear: both;
 }
 
 .item .description {

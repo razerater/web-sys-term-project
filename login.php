@@ -11,10 +11,6 @@
 				<div id="logo">
 					<a href="index.php"><img src="resources/images/RPIlogo.png" alt="logo";"></a>
 				</div>
-				<div id="login-topRight">
-					<a class="white-link" href="login.php">RA/RD/AD Log in</a><br>
-					<a class="white-link" href="signup.php">Create account</a>
-				</div>
 			</div>
 
 			<!-- The navigation bar -->
