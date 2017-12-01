@@ -3,7 +3,7 @@ ob_start();
 session_start();
 
 if( isset($_SESSION['user'])!="" ) {
-	header("Location: dashboard/index.php");
+	header("Location: dashboard.php");
 }
 
 include_once 'dbconnect.php';
@@ -61,7 +61,7 @@ if ( isset($_POST['submit']) ) {
 		// echo "Hashed password: ".$hashpass."<br>";
 		// echo "Account type: ".$accountType."<br>";
 		// echo "Code: ".$code;
-		header("location: dashboard/index.php");
+		header("location: dashboard.php");
 	} else {
 		echo $errorText;
 	}

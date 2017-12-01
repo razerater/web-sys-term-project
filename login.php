@@ -56,7 +56,7 @@ ob_start();
 require_once 'dbconnect.php';
 
 if( isset($_SESSION['user'])!="") {
-	header("Location: dashboard/index.php");
+	header("Location: dashboard.php");
 	exit;
 }
 
@@ -92,7 +92,7 @@ if(isset($_POST['submit'])) {
 		if($count == 1 && $row['password'] == $hashpass) {
 
 			$_SESSION['user'] = $row['ID'];
-			header("Location: dashboard/index.php");
+			header("Location: dashboard.php");
 		} else {
 			$errorText = "Incorrect email and password combination";
 			echo $errorText;
