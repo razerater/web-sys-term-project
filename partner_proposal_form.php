@@ -49,12 +49,18 @@ if(isset($_POST['submit'])) {
 
 <html>
 	<head>
-		<script type="text/javascript" src="resources/jquery-3.2.1.js"></script>
+	    <script type="text/javascript" src="resources/jquery-3.2.1.js"></script>
+	    <script src="resources/static/semantic.min.js"></script>
+	    <link rel="stylesheet" href="resources/static/semantic.min.css">
+	    <link rel="stylesheet" href="resources/static/style.css">
+	    <link rel="stylesheet" href="resources/static/font-awesome.css">
 	</head>
 	<body>
+		<div class="singleform">
 		<h2>Campus Partners Program Proposal</h2>
 		<!-- Name values are selectors for posting to php -->
-		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+		<div class="ui raised very padded text container segment">
+		<form class="form ui" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
 			<label>Your Name</label>
 			<input type="text" name="name"/><br>
 			<label>RPI Email</label>
@@ -101,7 +107,9 @@ if(isset($_POST['submit'])) {
 			<textarea name="SLLsupport" rows="4" cols="50"></textarea><br>
 			<lable>Additional Comments/Information</lable><br>
 			<textarea name="additional" rows="4" cols="50"></textarea><br>
-			<input type="submit" value="Submit" name="submit">
+			<input class="ui primary button submitbutton" type="submit" value="Submit" name="submit">
 		</form>
+	  </div>
+	 </div>
 	</body>
 </html>
