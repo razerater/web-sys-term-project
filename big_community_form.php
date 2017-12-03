@@ -37,7 +37,7 @@ if(isset($_POST['submit'])) {
 	//if no error run sql code, small_program_proposals is the table name, need new table for each form type
 	if(!$error) {
 		$sql = "INSERT INTO big_program_proposals (name, building, `date`, `time`, location, title, description, learningOutcomes, budget, itemNames, itemCosts, additional) VALUES ('$name','$building','$date','$time','$location','$title','$description','$learningOutcomes','$budget','$itemNames','$itemCosts', '$additional')";
-		if(!mysql_query($sql)) {	//if the sql is bad it prints an error, else it just runs the script
+		if(!mysql_query($sql)) { //if the sql is bad it prints an error, else it just runs the script
 			die('Error: ' . mysql_error());
 		}
 		header("Location: dashboard.php");	//moves user back to dashboard
