@@ -45,8 +45,6 @@ if(isset($_POST['submit'])) {
 			die('Error: ' . mysql_error());
 		}
 		header("Location: dashboard.php");	//moves user back to dashboard
-	} else {
-		echo($errorText);
 	}
 }
 //Side note: PHP echo is html code. It can be used to write html using php variables, creating dynamic pages similar to ajax from lab4
@@ -99,6 +97,7 @@ if(isset($_POST['submit'])) {
 			<button type="button" id="addItem">Add item</button><br>
 			</div><br>
 			<input class="ui primary button submitbutton" type="submit" value="Submit" name="submit">
+			<?php echo $errorText; ?>
 		</form>
 	  </div>
 	</div>
