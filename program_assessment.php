@@ -15,7 +15,7 @@ $errorText = '';
 //set post data to php variables
 //will be more useful later when we validate user entry
 if(isset($_POST['submit'])) {
-	$name = htmlspecialchars($_POST['name']);
+	$name = $userRow['name']; // htmlspecialchars($_POST['name']);
 	// $email = $_POST['email'];
 	$building = htmlspecialchars($_POST['building']);
 	$date = htmlspecialchars($_POST['date']);
@@ -37,7 +37,7 @@ if(isset($_POST['submit'])) {
 	// $itemCosts = serialize($_POST['itemCost']);
 
 	//form validation, makes sure nothiing is empty. Add more later
-	if(empty($name) || empty($building) || empty($date) || empty($title) || empty($description) || empty($pre1) || empty($pre2) || empty($pre3) || empty($post1) || empty($post2) || empty($post3)) {
+	if(empty($building) || empty($date) || empty($title) || empty($description) || empty($pre1) || empty($pre2) || empty($pre3) || empty($post1) || empty($post2) || empty($post3)) {
 		$error = true;
 		$errorText = 'must fill all required fields';
 	}
@@ -70,8 +70,8 @@ if(isset($_POST['submit'])) {
 		
 		<!-- Name values are selectors for posting to php -->
 		<form class="ui form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
-			<label>Name</label>
-			<input type="text" name="name"/><br>
+			<!-- <label>Name</label>
+			<input type="text" name="name"/><br> -->
 			<label>Building</label>
 			<select id="building" name="building">
 				<option value="barton">Barton Hall</option>

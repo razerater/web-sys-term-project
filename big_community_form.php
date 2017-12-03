@@ -16,7 +16,7 @@ $errorText = '';
 //set post data to php variables
 //will be more useful later when we validate user entry
 if(isset($_POST['submit'])) {
-	$name = htmlspecialchars($_POST['name']);
+	$name = $userRow['name']; // htmlspecialchars($_POST['name']);
 	$building = htmlspecialchars($_POST['building']);
 	$date = htmlspecialchars($_POST['date']);
 	$time = htmlspecialchars($_POST['time']);
@@ -64,8 +64,8 @@ if(isset($_POST['submit'])) {
 		
 		<!-- Name values are selectors for posting to php -->
 		<form class="ui form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
-			<label>Name</label>
-			<input type="text" name="name"/><br>
+			<!-- <label>Name</label>
+			<input type="text" name="name"/><br> -->
 			<label>Building</label>
 			<input type="text" name="building"/><br>
 			<label>Program Date</label>

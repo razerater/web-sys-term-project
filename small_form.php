@@ -12,11 +12,13 @@ require_once 'dbconnect.php';
 $error = false;
 $errorText = '';
 
+$userRow=mysql_fetch_array(mysql_query("SELECT * FROM accounts WHERE ID= '".$_SESSION['user']."'"));
+
 //set post data to php variables
 //will be more useful later when we validate user entry
 if(isset($_POST['submit'])) {
-	$name = htmlspecialchars($_POST['name']);
-	$email = htmlspecialchars($_POST['email']);
+	$name = $userRow['name']; // htmlspecialchars($_POST['name']);
+	$email = $userRow['email']; // htmlspecialchars($_POST['email']);
 	$building = htmlspecialchars($_POST['building']);
 	$date = htmlspecialchars($_POST['date']);
 	$time = htmlspecialchars($_POST['time']);
@@ -34,7 +36,7 @@ if(isset($_POST['submit'])) {
 	$itemCosts = serialize(htmlspecialchars($_POST['itemCost']));
 
 	//form validation, makes sure nothiing is empty. Add more later
-	if(empty($name) || empty($email) || empty($building) || empty($date) || empty($time) || empty($location) || empty($title) || empty($description) || empty($learningObjective) || empty($q1) || empty($q2) || empty($q3) || empty($budget) || empty($itemNames) || empty($itemCosts)) {
+	if(empty($building) || empty($date) || empty($time) || empty($location) || empty($title) || empty($description) || empty($learningObjective) || empty($q1) || empty($q2) || empty($q3) || empty($budget) || empty($itemNames) || empty($itemCosts)) {
 		$error = true;
 		$errorText = 'must fill all required fields';
 	}
@@ -67,10 +69,10 @@ if(isset($_POST['submit'])) {
 		
 		<!-- Name values are selectors for posting to php -->
 		<form class="ui form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
-			<label>Name</label>
+			<!-- <label>Name</label>
 			<input type="text" name="name"/><br>
 			<label>RPI Email</label>
-			<input type="text" name="email"/><br>
+			<input type="text" name="email"/><br> -->
 			<label>Building</label>
 			<input type="text" name="building"/><br>
 			<label>Program Date</label>
