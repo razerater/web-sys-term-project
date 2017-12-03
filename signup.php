@@ -49,6 +49,7 @@
 				</form>
 				<p class="login-registerNowText">Don't have an account?</p>
           		<button type="button" class="login-registerNow" onclick="location.href='login.php'">Already have an account? Login now!</button>
+			<?php echo $errorText; ?>
 			</div>
 		</div>ss
 
