@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="UTF-8">
+		<title>Welcome to RPI ResLife Assistant!</title>
 		<link rel="stylesheet" href="resources/index.css" type="text/css" />
 		<link rel="stylesheet" href="resources/header.css" type="text/css" />
-
 	</head>
 	<body>
 		<div id="header">
 			<div id="red-top"></div>
 			<div id="header-block">
 				<div id="logo">
-					<a href="index.php"><img src="resources/images/RPIlogo.png" alt="logo";"></a>
+					<a href="index.php"><img src="resources/images/RPIlogo.png" alt="logo"></a>
 				</div>
 				<div id="login-topRight">
 					<a class="white-link" href="login.php">RA/RD/AD Log in</a><br>
@@ -31,7 +32,7 @@
 		</div>
 
 		<div id="welcome-index">
-			<img id="indexBack" src="resources/images/index_background.jpg" width="100%" height="500">
+			<img id="indexBack" src="resources/images/index_background.jpg" alt="index_back" height="500">
 			<div id="welcome-triangle"></div>
 			<div id="welcome-text">
 			For Clubs and <br>

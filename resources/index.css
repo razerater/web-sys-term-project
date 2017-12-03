@@ -20,6 +20,7 @@ img#indexBack
     left: 0px;
     top: 244px;
     z-index: -1;
+    width: 100%;
 }
 
 #welcome-text

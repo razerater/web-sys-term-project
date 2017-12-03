@@ -56,10 +56,10 @@ select{
 }
 #register-register{
 	display: inline-block;
-	padding: 5px 20px 5px 20px;
+	padding: 8px 20px 8px 20px;
 	font-size: 1.3em;
 	max-width: 180px;
-	margin-top: 0.5em;
+	margin-top: 0.3em;
 	margin-bottom: 0.7em;
 	margin-left: 370px;
 	background-color: #a50303;

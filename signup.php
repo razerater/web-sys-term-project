@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="UTF-8">
 		<title>RA/RD/AD--Register</title>
 		<link rel="stylesheet" href="resources/signup.css" type="text/css" />
 		<link rel="stylesheet" href="resources/header.css" type="text/css" />
@@ -10,7 +11,7 @@
 			<div id="red-top"></div>
 			<div id="header-block">
 				<div id="logo">
-					<a href="index.php"><img src="resources/images/RPIlogo.png" alt="logo";"></a>
+					<a href="index.php"><img src="resources/images/RPIlogo.png" alt="logo"></a>
 				</div>
 			</div>
 
