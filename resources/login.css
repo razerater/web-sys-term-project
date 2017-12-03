@@ -30,6 +30,7 @@ input{
 	width: 20em;
 	background-color: #fff2f2;
 	border: solid #a50303;
+	border-radius: 2px;
 }
 label{
 	width: 150px;
@@ -53,6 +54,7 @@ label{
 	background-color: #a50303;
 	color: #fff2f2;
 	border: none;
+	border-radius: 5px;
 }
 #login-login:hover{
 	cursor: pointer;

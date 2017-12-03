@@ -1,6 +1,6 @@
-#login-box{
+#register-box{
 	margin-top: 10px;
-	max-width: 500px;
+	max-width: 600px;
 	margin-left: auto;
 	margin-right: auto;
 	border: medium solid;
@@ -8,13 +8,13 @@
 	margin-bottom: 100px;
 	border-radius: 10px;
 }
-#login-header{
+#register-header{
 	margin: 0 5px 25px 5px;
 	padding: 10px 0 5px 10px;
 	font-size: 30px;
 	border-bottom: thin black solid;
 }
-#login-centered{
+#register-centered{
 	padding-top: 100px;
 	padding-bottom: 50px;
 	max-width: 800px;
@@ -27,52 +27,65 @@ form{
 input{
 	display: inline;
 	font-size: 15px;
-	width: 20em;
+	width: 19em;
 	background-color: #fff2f2;
 	border: solid #a50303;
+	border-radius: 2px;
+	padding-left: 10px;
 }
 label{
-	width: 150px;
+	width: 250px;
 	margin: 0;
 	float: left;
 	text-align: left;
 	font-size: 20px;
 }
-.login-value{
-	margin: 0.5em 0 1em 0;
-	height: 25px;
+select{
+	display: inline;
+	font-size: 15px;
+	width: 5em;
+	background-color: #fff2f2;
+	border: solid #a50303;
+	border-radius: 2px;
 }
-#login-login{
+.register-value{
+	margin: 0 0 1em 0;
+	height: 25px;
+	float: left;
+	width: 300px;
+}
+#register-register{
 	display: inline-block;
 	padding: 5px 20px 5px 20px;
-	font-size: 1.2em;
-	max-width: 100px;
-	margin-top: 0.3em;
+	font-size: 1.3em;
+	max-width: 180px;
+	margin-top: 0.5em;
 	margin-bottom: 0.7em;
-	margin-left: 350px;
+	margin-left: 370px;
 	background-color: #a50303;
 	color: #fff2f2;
 	border: none;
+	border-radius: 5px;
 }
-#login-login:hover{
+#register-register:hover{
 	cursor: pointer;
 }
 
-.login-registerNow{
+.register-loginNow{
 	display: inline;
 	padding: 0 10px 0 10px;
 	font-size: 1em;
 	background-color: #a50303;
 	color: #fff2f2;
 }
-.login-registerNow:hover{
+.register-loginNow:hover{
 	cursor: pointer;
 }
-p.login-registerNowText{
-	margin: 0 20px 0 0;
+p.register-loginNowText{
+	margin: 0 30px 0 0;
 	padding: 0;
 	display:inline-block;
 	font-size: 15px;
-	width: 335px;
+	width: 420px;
 	text-align: right;
 }
