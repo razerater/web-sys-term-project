@@ -15,19 +15,19 @@ $errorText = '';
 //set post data to php variables
 //will be more useful later when we validate user entry
 if(isset($_POST['submit'])) {
-	$name = $_POST['name'];
-	$email = $_POST['email'];
-	$department = $_POST['department'];
-	$date = $_POST['date'];
-	$time = $_POST['time'];
-	$location = $_POST['location'];
-	$classYear = $_POST['classYear'];
-	$curricularExperience = $_POST['curricularExperience'];
-	$description = $_POST['description'];
-	$learningObjectives = $_POST['learningObjectives'];
-	$assessed = $_POST['assessed'];
-	$SLLsupport = $_POST['SLLsupport'];
-	$additional = $_POST['additional'];
+	$name = htmlspecialchars($_POST['name']);
+	$email = htmlspecialchars($_POST['email']);
+	$department = htmlspecialchars($_POST['department']);
+	$date = htmlspecialchars($_POST['date']);
+	$time = htmlspecialchars($_POST['time']);
+	$location = htmlspecialchars($_POST['location']);
+	$classYear = htmlspecialchars($_POST['classYear']);
+	$curricularExperience = htmlspecialchars($_POST['curricularExperience']);
+	$description = htmlspecialchars($_POST['description']);
+	$learningObjectives = htmlspecialchars($_POST['learningObjectives']);
+	$assessed = htmlspecialchars($_POST['assessed']);
+	$SLLsupport = htmlspecialchars($_POST['SLLsupport']);
+	$additional = htmlspecialchars($_POST['additional']);
 
 	//form validation, makes sure nothiing is empty. Add more later
 
@@ -38,6 +38,8 @@ if(isset($_POST['submit'])) {
 			die('Error: ' . mysql_error());
 		}
 		header("Location: landing.php");	//moves user back to dashboard
+	} else {
+		echo($errorText);
 	}
 }
 //Side note: PHP echo is html code. It can be used to write html using php variables, creating dynamic pages similar to ajax from lab4
@@ -106,7 +108,6 @@ if(isset($_POST['submit'])) {
 			<lable>Additional Comments/Information</lable><br>
 			<textarea name="additional" rows="4" cols="50"></textarea><br>
 			<input class="ui primary button submitbutton" type="submit" value="Submit" name="submit">
-			<?php echo $errorText; ?>
 		</form>
 	  </div>
 	 </div>

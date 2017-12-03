@@ -14,24 +14,24 @@ $errorText = '';
 
 //set post data to php variables
 //will be more useful later when we validate user entry
-if(isset($_POST['submit'])) {
-  $name = $_POST['name'];
-  $email = $_POST['email'];
-  $building = $_POST['building'];
-  $date = $_POST['date'];
-  $time = $_POST['time'];
-  $location = $_POST['location'];
-  $title = $_POST['title'];
-  $description = $_POST['description'];
-  $learningObjective = $_POST['learningObjective'];
-  $q1 = $_POST['q1'];
-  $q2 = $_POST['q2'];
-  $q3 = $_POST['q3'];
-  $budget = $_POST['budget'];
+if(isset(htmlspecialchars($_POST['submit']))) {
+  $name = htmlspecialchars($_POST['name']);
+  $email = htmlspecialchars($_POST['email']);
+  $building = htmlspecialchars($_POST['building']);
+  $date = htmlspecialchars($_POST['date']);
+  $time = htmlspecialchars($_POST['time']);
+  $location = htmlspecialchars($_POST['location']);
+  $title = htmlspecialchars($_POST['title']);
+  $description = htmlspecialchars($_POST['description']);
+  $learningObjective = htmlspecialchars($_POST['learningObjective']);
+  $q1 = htmlspecialchars($_POST['q1']);
+  $q2 = htmlspecialchars($_POST['q2']);
+  $q3 = htmlspecialchars($_POST['q3']);
+  $budget = htmlspecialchars($_POST['budget']);
   //Arrays cannot be put in SQL tables, so they must be converted into a string, 
   //which can later be decoded back to an array in php using the unserialize() function
-  $itemNames = serialize($_POST['itemName']);
-  $itemCosts = serialize($_POST['itemCost']);
+  $itemNames = serialize(htmlspecialchars($_POST['itemName']));
+  $itemCosts = serialize(htmlspecialchars($_POST['itemCost']));
 
   //form validation, makes sure nothiing is empty. Add more later
   if(empty($name) || empty($email) || empty($building) || empty($date) || empty($time) || empty($location) || empty($title) || empty($description) || empty($learningObjective) || empty($q1) || empty($q2) || empty($q3) || empty($budget) || empty($itemNames) || empty($itemCosts)) {

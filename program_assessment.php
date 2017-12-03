@@ -15,21 +15,21 @@ $errorText = '';
 //set post data to php variables
 //will be more useful later when we validate user entry
 if(isset($_POST['submit'])) {
-	$name = $_POST['name'];
+	$name = htmlspecialchars($_POST['name']);
 	// $email = $_POST['email'];
-	$building = $_POST['building'];
-	$date = $_POST['date'];
+	$building = htmlspecialchars($_POST['building']);
+	$date = htmlspecialchars($_POST['date']);
 	// $time = $_POST['time'];
 	// $location = $_POST['location'];
-	$title = $_POST['title'];
-	$description = $_POST['description'];
+	$title = htmlspecialchars($_POST['title']);
+	$description = htmlspecialchars($_POST['description']);
 	// $learningObjective = $_POST['learningObjective'];
-	$pre1 = $_POST['pre1'];
-	$pre2 = $_POST['pre2'];
-	$pre3 = $_POST['pre3'];
-	$post1 = $_POST['post1'];
-	$post2 = $_POST['post2'];
-	$post3 = $_POST['post3'];
+	$pre1 = htmlspecialchars($_POST['pre1']);
+	$pre2 = htmlspecialchars($_POST['pre2']);
+	$pre3 = htmlspecialchars($_POST['pre3']);
+	$post1 = htmlspecialchars($_POST['post1']);
+	$post2 = htmlspecialchars($_POST['post2']);
+	$post3 = htmlspecialchars($_POST['post3']);
 	// $budget = $_POST['budget'];
 	//Arrays cannot be put in SQL tables, so they must be converted into a string, 
 	//which can later be decoded back to an array in php using the unserialize() function
@@ -48,6 +48,8 @@ if(isset($_POST['submit'])) {
 			die('Error: ' . mysql_error());
 		}
 		header("Location: dashboard.php");	//moves user back to dashboard
+	} else {
+		echo($errorText);
 	}
 }
 //Side note: PHP echo is html code. It can be used to write html using php variables, creating dynamic pages similar to ajax from lab4
@@ -128,7 +130,6 @@ if(isset($_POST['submit'])) {
 			<label>Additional comments/information:</label>
 			<input type="text" name="comments"/><br>
 			<input class="ui primary button submitbutton" type="submit" value="Submit" name="submit">
-			<?php echo $errorText; ?>
 		</form>
 	  </div>
 	</div>

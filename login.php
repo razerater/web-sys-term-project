@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="UTF-8">
 		<title>RA/RD/AD--Login</title>
 		<link rel="stylesheet" href="resources/login.css" type="text/css" />
 		<link rel="stylesheet" href="resources/header.css" type="text/css" />
@@ -10,7 +11,7 @@
 			<div id="red-top"></div>
 			<div id="header-block">
 				<div id="logo">
-					<a href="index.php"><img src="resources/images/RPIlogo.png" alt="logo";"></a>
+					<a href="index.php"><img src="resources/images/RPIlogo.png" alt="logo"></a>
 				</div>
 			</div>
 
@@ -19,7 +20,8 @@
 				<ul id="nav-list">
 					<li class="nav-item"><a class="nav-item" href="aboutUs.php">About ResLife</a></li>
 					<li class="nav-item"><a class="nav-item" href="activityCalendar.php">Activity Calendar</a></li>
-					<li class="nav-item"><a class="nav-item" href="generalForm.php">General Form</a></li>
+					<li class="nav-item"><a class="nav-item" href="partner_proposal_form.php">General Form</a></li>
+					<li class="nav-item"><a class="nav-item" href="program_evaluation.php">Evaluation Form</a></li>
 					<li class="nav-item"><a class="nav-item" href="contactUs.php">Contact RPI ResLife</a></li>
 				</ul>
 			</div>
