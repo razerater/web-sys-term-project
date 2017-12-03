@@ -105,7 +105,7 @@ $(document).ready(function(){
 		i++;
 		var html = '<input type="text" name="itemName[]"/>';
 		html += '$<input type="number" name="itemCost[]"/> <br>';
-		$('#costList').append(html);
+		$('#costList').insertBefore(html);
 	});
 });
 </script>
