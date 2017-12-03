@@ -81,6 +81,7 @@ li.nav-item
 	padding-left: 20px;
 	padding-right: 20px;
 	margin-right: 50px;
+	border-radius: 5px;
 }
 
 a.nav-item

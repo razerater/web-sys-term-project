@@ -118,11 +118,6 @@ if ( isset($_POST['submit']) ) {
 		$sql = mysql_query("SELECT * FROM accounts WHERE email = '$email'");
 		$row = mysql_fetch_array($sql);
 		$_SESSION['user'] = $row['ID'];
-		// echo "Email: ".$email."<br>";
-		// echo "Password: ".$password."<br>";
-		// echo "Hashed password: ".$hashpass."<br>";
-		// echo "Account type: ".$accountType."<br>";
-		// echo "Code: ".$code;
 		header("location: dashboard.php");
 	} else {
 		echo $errorText;
