@@ -37,8 +37,8 @@ $userRow=mysql_fetch_array(mysql_query("SELECT * FROM accounts WHERE ID= '".$_SE
                 <div class="ui left dropdown item" style="padding-bottom: 0 !important;"> <!--Item will have 30px padding -->
    				       <i class="icon plus"></i> Submit forms                     <!--Here are two items, so the padding would be 60px, wrong -->
                   <div class="menu">                                        <!--Therefore, overide padding here ONLY -->
-                    <div class="item"><i class="write square icon"></i>Small Community Form</div>
-                    <div class="item"><i class="write square icon"></i>Big Community Form</div>
+                    <div class="item" onclick="location.href='small_form.php';"><i class="write square icon"></i>Small Community Form</div>
+                    <div class="item" onclick="location.href='big_community_form.php';"><i class="write square icon"></i>Big Community Form</div>
                   </div>
                 </div>
   			      </a>
