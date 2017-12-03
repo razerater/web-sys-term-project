@@ -10,6 +10,10 @@ body {
   max-height: 100%;
 }
 
+.errorText {
+  color: red;
+}
+
 .singleform {
   height: 100%;
   overflow: auto;
@@ -160,6 +164,7 @@ div.content:hover i.remove.icon {
   clear: both;
   background-color: #a50303 !important;
   color: #fff2f2 !important;
+  margin-top: 1em;
 }
 
 .item .description {
