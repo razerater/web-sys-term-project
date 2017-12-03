@@ -158,6 +158,8 @@ div.content:hover i.remove.icon {
 .ui.form .submitbutton {
   float: right;
   clear: both;
+  background-color: #a50303 !important;
+  color: #fff2f2 !important;
 }
 
 .item .description {
