@@ -15,15 +15,15 @@ $errorText = '';
 //set post data to php variables
 //will be more useful later when we validate user entry
 if(isset($_POST['submit'])) {
-	$major = $_POST['major'];
-	$staff = $_POST['staff'];
-	$building = $_POST['building'];
-	$date = $_POST['date'];
-	$title = $_POST['title'];
-	$category = $_POST['category'];
-	$learned = $_POST['learned'];
-	$enjoyment = $_POST['enjoyment'];
-	$comments = $_POST['comments'];
+	$major = htmlspecialchars($_POST['major']);
+	$staff = htmlspecialchars($_POST['staff']);
+	$building = htmlspecialchars($_POST['building']);
+	$date = htmlspecialchars($_POST['date']);
+	$title = htmlspecialchars($_POST['title']);
+	$category = htmlspecialchars($_POST['category']);
+	$learned = htmlspecialchars($_POST['learned']);
+	$enjoyment = htmlspecialchars($_POST['enjoyment']);
+	$comments = htmlspecialchars($_POST['comments']);
 
 	//form validation, makes sure nothiing is empty. Add more later
 	if(empty($major) || empty($staff) || empty($building) || empty($date) || empty($title) || empty($category) || empty($learned) || empty($enjoyment)) {

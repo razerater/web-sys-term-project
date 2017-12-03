@@ -16,31 +16,33 @@ $errorText = '';
 //set post data to php variables
 //will be more useful later when we validate user entry
 if(isset($_POST['submit'])) {
-	$name = $_POST['name'];
-	$building = $_POST['building'];
-	$date = $_POST['date'];
-	$time = $_POST['time'];
-	$location = $_POST['location'];
-	$title = $_POST['title'];
-	$description = $_POST['description'];
-	$learningOutcomes = $_POST['learningOutcomes'];
-	$partnerCollabs = $_POST['partnerCollabs'];
-	$budget = $_POST['budget'];
+	$name = htmlspecialchars($_POST['name']);
+	$building = htmlspecialchars($_POST['building']);
+	$date = htmlspecialchars($_POST['date']);
+	$time = htmlspecialchars($_POST['time']);
+	$location = htmlspecialchars($_POST['location']);
+	$title = htmlspecialchars($_POST['title']);
+	$description = htmlspecialchars($_POST['description']);
+	$learningOutcomes = htmlspecialchars($_POST['learningOutcomes']);
+	$partnerCollabs = htmlspecialchars($_POST['partnerCollabs']);
+	$budget = htmlspecialchars($_POST['budget']);
 	//Arrays cannot be put in SQL tables, so they must be converted into a string, 
 	//which can later be decoded back to an array in php using the unserialize() function
-	$itemNames = serialize($_POST['itemName']);
-	$itemCosts = serialize($_POST['itemCost']);
-	$additional = $_POST['additional'];
+	$itemNames = serialize(htmlspecialchars($_POST['itemName']));
+	$itemCosts = serialize(htmlspecialchars($_POST['itemCost']));
+	$additional = htmlspecialchars($_POST['additional']);
 
 	//form validation, makes sure nothiing is empty. Add more later
 
 	//if no error run sql code, small_program_proposals is the table name, need new table for each form type
 	if(!$error) {
 		$sql = "INSERT INTO big_program_proposals (name, building, `date`, `time`, location, title, description, learningOutcomes, budget, itemNames, itemCosts, additional) VALUES ('$name','$building','$date','$time','$location','$title','$description','$learningOutcomes','$budget','$itemNames','$itemCosts', '$additional')";
-		if(!mysql_query($sql)) { //if the sql is bad it prints an error, else it just runs the script
+		if(!mysql_query($sql)) {	//if the sql is bad it prints an error, else it just runs the script
 			die('Error: ' . mysql_error());
 		}
 		header("Location: dashboard.php");	//moves user back to dashboard
+	} else {
+		echo($errorText);
 	}
 }
 //Side note: PHP echo is html code. It can be used to write html using php variables, creating dynamic pages similar to ajax from lab4
@@ -92,7 +94,6 @@ if(isset($_POST['submit'])) {
 			<lable>Additional Comments/Information</lable><br>
 			<textarea name="additional" rows="4" cols="50"></textarea><br>
 			<input class="ui primary button submitbutton" type="submit" value="Submit" name="submit">
-			<?php echo $errorText; ?>
 		</form>
 	  </div>
 	</div>
@@ -105,7 +106,7 @@ $(document).ready(function(){
 		i++;
 		var html = '<input type="text" name="itemName[]"/>';
 		html += '$<input type="number" name="itemCost[]"/> <br>';
-		$('#costList').insertBefore(html);
+		$('#costList').append(html);
 	});
 });
 </script>
