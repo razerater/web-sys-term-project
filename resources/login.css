@@ -27,10 +27,11 @@ form{
 input{
 	display: inline;
 	font-size: 15px;
-	width: 20em;
+	width: 19.5em;
 	background-color: #fff2f2;
 	border: solid #a50303;
 	border-radius: 2px;
+	padding-left: 10px;
 }
 label{
 	width: 150px;
