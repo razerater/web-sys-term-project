@@ -34,13 +34,23 @@ $userRow=mysql_fetch_array(mysql_query("SELECT * FROM accounts WHERE ID= '".$_SE
           <div class="item clickable">
             <div class="content">
               <a class="item">
-                <div class="ui left dropdown item" style="padding-bottom: 0 !important;"> <!--Item will have 30px padding -->
-   				       <i class="icon plus"></i> Submit forms                     <!--Here are two items, so the padding would be 60px, wrong -->
-                  <div class="menu">                                        <!--Therefore, overide padding here ONLY -->
-                    <div class="item"><i class="write square icon"></i><a href="small_form.php">Small Community Form</a></div>
-                    <div class="item"><i class="write square icon"></i><a href="big_community_form.php">Big Community Form</a></div>
-                  </div>
-                </div>
+                <?php
+                if($userRow['accountType'] != 'AD') { //RA code
+                  echo('<div class="ui left dropdown item" style="padding-bottom: 0 !important;"> ');
+                  echo('<i class="icon plus"></i> Submit forms'); 
+                  echo('<div class="menu">');
+                  echo('<div class="item" onclick="location.href='."'small_form.php';");
+                  echo('"><i class="write square icon"></i>Small Community Form</div>');
+                  echo('<div class="item" onclick="location.href='."'big_community_form.php';");
+                  echo('"><i class="write square icon"></i>Big Community Form</div>');
+                  echo('<div class="item" onclick="location.href='."'program_assessment.php';");
+                  echo('"><i class="write square icon"></i>Program Assessment Form</div>');
+                  echo('</div>');
+                  echo('</div>');
+                } else { //AD code 
+                  echo('<i class="icon check"></i> View Forms');
+                }
+                ?>
   			      </a>
             </div>
           </div>
@@ -71,8 +81,8 @@ $userRow=mysql_fetch_array(mysql_query("SELECT * FROM accounts WHERE ID= '".$_SE
             <i class="dropdown icon"></i>
             <div class="menu">
               
-              <div class="item">
-                <a href="logout.php">Sign Out</a>
+              <div class="item" onclick="location.href='logout.php'"> <!--Instead of using 'a' tag, assign onclick to div would solve that problem -->
+                 Sign Out
               </div>
             </div>
         </div>        
@@ -128,9 +138,9 @@ $userRow=mysql_fetch_array(mysql_query("SELECT * FROM accounts WHERE ID= '".$_SE
                 $smallFormMatch = mysql_fetch_array(mysql_query("SELECT * FROM small_program_proposals WHERE ID='$i' AND status= 'Unapproved'"));
                 $count = mysql_num_rows(mysql_query("SELECT * FROM small_program_proposals WHERE ID='$i' AND status= 'Unapproved'"));
                 if($count >= 1) {
-                  echo('<div><form action="view_small_forms.php" method="POST"');
+                  echo('<div class="ten wide column"><form action="view_small_forms.php" method="POST"');
                   echo('<a class="title">'.$smallFormMatch['title'].'</a>');
-                  echo(' name: <a>'.$smallFormMatch['name'].'</a>');
+                  echo(' From: <a>'.$smallFormMatch['name'].'</a>');
                   echo('<input type="hidden" value="'.$smallFormMatch['ID'].'"  name="data"/>');
                   echo('<input type="submit" value="view event" name="view"/>');
                   echo('<br></form></div>');
@@ -181,7 +191,7 @@ $userRow=mysql_fetch_array(mysql_query("SELECT * FROM accounts WHERE ID= '".$_SE
                 $bigFormMatch = mysql_fetch_array(mysql_query("SELECT * FROM big_program_proposals WHERE ID='$i' AND status= 'Unapproved'"));
                 $count = mysql_num_rows(mysql_query("SELECT * FROM big_program_proposals WHERE ID='$i' AND status= 'Unapproved'"));
                 if($count >= 1) {
-                  echo('<div><form action="view_big_forms.php" method="POST"');
+                  echo('<div class="ten wide column"><form action="view_big_forms.php" method="POST"');
                   echo('<a class="title">'.$bigFormMatch['title'].'</a>');
                   echo(' name: <a>'.$bigFormMatch['name'].'</a>');
                   echo('<input type="hidden" value="'.$bigFormMatch['ID'].'"  name="data"/>');

@@ -48,7 +48,7 @@ $event = mysql_fetch_array(mysql_query("SELECT * FROM big_program_proposals WHER
 			<input type="hidden" value="<?php echo $event['ID']; ?>" name="id"/>
 			<input type="hidden" value="big" name="formtype"/>
 			<div id="costList">
-			<label>Item Costs</label>
+			<label>Item Costs List</label>
 			<?php 
 			$itemNames = unserialize($event['itemNames']);
 			$itemCosts = unserialize($event['itemCosts']);

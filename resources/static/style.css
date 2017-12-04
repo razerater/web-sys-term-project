@@ -167,6 +167,11 @@ div.content:hover i.remove.icon {
   margin-top: 1em;
 }
 
+#costList {
+  margin-top: 1em;
+  color: black;
+}
+
 .item .description {
   margin-top: 5px;
 }
