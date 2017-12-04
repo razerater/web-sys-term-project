@@ -37,23 +37,13 @@ $userRow=mysql_fetch_array(mysql_query("SELECT * FROM accounts WHERE ID= '".$_SE
                 <div class="ui left dropdown item" style="padding-bottom: 0 !important;"> <!--Item will have 30px padding -->
    				       <i class="icon plus"></i> Submit forms                     <!--Here are two items, so the padding would be 60px, wrong -->
                   <div class="menu">                                        <!--Therefore, overide padding here ONLY -->
-                    <div class="item" onclick="location.href='small_form.php';"><i class="write square icon"></i>Small Community Form</div>
-                    <div class="item" onclick="location.href='big_community_form.php';"><i class="write square icon"></i>Big Community Form</div>
+                    <div class="item"><i class="write square icon"></i><a href="small_form.php">Small Community Form</a></div>
+                    <div class="item"><i class="write square icon"></i><a href="big_community_form.php">Big Community Form</a></div>
                   </div>
                 </div>
   			      </a>
             </div>
           </div>
-
-          <?php if($userRow['accountType'] == 'AD') {  ?>
-          <div class="item clickable">
-            <div class="content">
-              <a class="item">
-   				<i class="icon checkmark box"></i> View Forms
-  			  </a>
-            </div>
-          </div>
-          <?php } ?>
 
           <div class="item clickable">
             <div class="content">
@@ -103,27 +93,48 @@ $userRow=mysql_fetch_array(mysql_query("SELECT * FROM accounts WHERE ID= '".$_SE
           </div>
           <div class="content"> <!-- small events-->
             <div class="summary">
+              <?php if($userRow['accountType'] != 'AD') { ?>
               Your Small Events.
+              <?php } else { ?>
+              Unapproved small forms
+              <?php } ?>
+
             </div>
             <div class="extra text">
               <div class="ui grid"> <!-- grid layout-->
-            <?php 
-            $matches = [];
-            $last_entry = mysql_fetch_array(mysql_query("SELECT * FROM small_program_proposals ORDER BY ID DESC LIMIT 1"))['ID'];
-            for($i=1; $i<=$last_entry; $i++) {
-              $smallFormMatch = mysql_fetch_array(mysql_query("SELECT * FROM small_program_proposals WHERE ID='$i' AND email= '".$userRow['email']."'"));
-              $count = mysql_num_rows(mysql_query("SELECT * FROM small_program_proposals WHERE ID='$i' AND email= '".$userRow['email']."'"));
-              if($count >= 1) {
-                echo('<div class="six wide column">');
-                echo('<a class="title">'.$smallFormMatch['title'].'</a>');
-                echo('</div>');
-                echo('<div class="six wide column">');
-                echo('STATUS: <a>'.$smallFormMatch['status']);
-                if ($smallFormMatch['status'] == "Unapproved") { //font-awesome
-                  echo('<i class="hourglass start icon"></i>');
+            <?php
+            if($userRow['accountType'] != 'AD') { //RA code
+              $matches = [];
+              $last_entry = mysql_fetch_array(mysql_query("SELECT * FROM small_program_proposals ORDER BY ID DESC LIMIT 1"))['ID'];
+              for($i=1; $i<=$last_entry; $i++) {
+                $smallFormMatch = mysql_fetch_array(mysql_query("SELECT * FROM small_program_proposals WHERE ID='$i' AND email= '".$userRow['email']."'"));
+                $count = mysql_num_rows(mysql_query("SELECT * FROM small_program_proposals WHERE ID='$i' AND email= '".$userRow['email']."'"));
+                if($count >= 1) {
+                  echo('<div class="six wide column">');
+                  echo('<a class="title">'.$smallFormMatch['title'].'</a>');
+                  echo('</div>');
+                  echo('<div class="six wide column">');
+                  echo('STATUS: <a>'.$smallFormMatch['status']);
+                  if ($smallFormMatch['status'] == "Unapproved") { //font-awesome
+                    echo('<i class="hourglass start icon"></i>');
+                  }
+                  echo('</a><br></div>');
+                  array_push($matches, $smallFormMatch);
                 }
-                echo('</a><br></div>');
-                array_push($matches, $smallFormMatch);
+              }
+            } else { //AD code 
+              $last_entry = mysql_fetch_array(mysql_query("SELECT * FROM small_program_proposals ORDER BY ID DESC LIMIT 1"))['ID'];
+              for($i=1; $i<=$last_entry; $i++) {
+                $smallFormMatch = mysql_fetch_array(mysql_query("SELECT * FROM small_program_proposals WHERE ID='$i' AND status= 'Unapproved'"));
+                $count = mysql_num_rows(mysql_query("SELECT * FROM small_program_proposals WHERE ID='$i' AND status= 'Unapproved'"));
+                if($count >= 1) {
+                  echo('<div><form action="view_small_forms.php" method="POST"');
+                  echo('<a class="title">'.$smallFormMatch['title'].'</a>');
+                  echo(' name: <a>'.$smallFormMatch['name'].'</a>');
+                  echo('<input type="hidden" value="'.$smallFormMatch['ID'].'"  name="data"/>');
+                  echo('<input type="submit" value="view event" name="view"/>');
+                  echo('<br></form></div>');
+                }
               }
             }
             ?>
@@ -137,27 +148,46 @@ $userRow=mysql_fetch_array(mysql_query("SELECT * FROM accounts WHERE ID= '".$_SE
           </div>
           <div class="content"> <!-- large events-->
             <div class="summary">
+              <?php if($userRow['accountType'] != 'AD') { ?>
               Your Large Events.
+              <?php }else { ?>
+              Unapproved large forms
+              <?php } ?>
             </div>
             <div class="extra text">
               <div class="ui grid"> <!-- grid layout-->
-            <?php 
-            $matches = [];
-            $last_entry = mysql_fetch_array(mysql_query("SELECT * FROM big_program_proposals ORDER BY ID DESC LIMIT 1"))['ID'];
-            for($i=1; $i<=$last_entry; $i++) {
-              $bigFormMatch = mysql_fetch_array(mysql_query("SELECT * FROM big_program_proposals WHERE ID='$i' AND email= '".$userRow['email']."'"));
-              $count = mysql_num_rows(mysql_query("SELECT * FROM big_program_proposals WHERE ID='$i' AND email= '".$userRow['email']."'"));
-              if($count >= 1) {
-                echo('<div class="six wide column">');
-                echo('<a class="title">'.$bigFormMatch['title'].'</a>');
-                echo('</div>');
-                echo('<div class="six wide column">');
-                echo('STATUS: <a>'.$bigFormMatch['status']);
-                if ($bigFormMatch['status'] == "Unapproved") { //font-awesome
-                  echo('<i class="hourglass start icon"></i>');
+            <?php
+            if($userRow['accountType'] != 'AD') {
+              $last_entry = mysql_fetch_array(mysql_query("SELECT * FROM big_program_proposals ORDER BY ID DESC LIMIT 1"))['ID'];
+              for($i=1; $i<=$last_entry; $i++) {
+                $bigFormMatch = mysql_fetch_array(mysql_query("SELECT * FROM big_program_proposals WHERE ID='$i' AND email= '".$userRow['email']."'"));
+                $count = mysql_num_rows(mysql_query("SELECT * FROM big_program_proposals WHERE ID='$i' AND email= '".$userRow['email']."'"));
+                if($count >= 1) {
+                  echo('<div class="six wide column">');
+                  echo('<a class="title">'.$bigFormMatch['title'].'</a>');
+                  echo('</div>');
+                  echo('<div class="six wide column">');
+                  echo('STATUS: <a>'.$bigFormMatch['status']);
+                  if ($bigFormMatch['status'] == "Unapproved") { //font-awesome
+                    echo('<i class="hourglass start icon"></i>');
+                  }
+                  echo('</a><br></div>');
+                  array_push($matches, $bigFormMatch);
                 }
-                echo('</a><br></div>');
-                array_push($matches, $bigFormMatch);
+              }
+            } else {
+              $last_entry = mysql_fetch_array(mysql_query("SELECT * FROM big_program_proposals ORDER BY ID DESC LIMIT 1"))['ID'];
+              for($i=1; $i<=$last_entry; $i++) {
+                $bigFormMatch = mysql_fetch_array(mysql_query("SELECT * FROM big_program_proposals WHERE ID='$i' AND status= 'Unapproved'"));
+                $count = mysql_num_rows(mysql_query("SELECT * FROM big_program_proposals WHERE ID='$i' AND status= 'Unapproved'"));
+                if($count >= 1) {
+                  echo('<div><form action="view_big_forms.php" method="POST"');
+                  echo('<a class="title">'.$bigFormMatch['title'].'</a>');
+                  echo(' name: <a>'.$bigFormMatch['name'].'</a>');
+                  echo('<input type="hidden" value="'.$bigFormMatch['ID'].'"  name="data"/>');
+                  echo('<input type="submit" value="view event" name="view"/>');
+                  echo('<br></form></div>');
+                }
               }
             }
             ?>
