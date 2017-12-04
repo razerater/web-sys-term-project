@@ -26,7 +26,7 @@ if(isset($_POST['submit'])) {
 	$comments = htmlspecialchars($_POST['comments']);
 
 	//form validation, makes sure nothiing is empty. Add more later
-	if(empty($major) || empty($staff) || empty($building) || empty($date) || empty($title) || empty($category) || empty($learned) || empty($enjoyment)) {
+	if(empty($staff) || empty($building) || empty($date) || empty($title) || empty($category) || empty($learned) || empty($enjoyment)) {
 		$error = true;
 		$errorText = 'must fill all required fields';
 	}

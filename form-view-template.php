@@ -34,7 +34,7 @@ if(isset(htmlspecialchars($_POST['submit']))) {
   $itemCosts = serialize(htmlspecialchars($_POST['itemCost']));
 
   //form validation, makes sure nothiing is empty. Add more later
-  if(empty($name) || empty($email) || empty($building) || empty($date) || empty($time) || empty($location) || empty($title) || empty($description) || empty($learningObjective) || empty($q1) || empty($q2) || empty($q3) || empty($budget) || empty($itemNames) || empty($itemCosts)) {
+  if(empty($building) || empty($date) || empty($time) || empty($location) || empty($title) || empty($description) || empty($learningObjective) || empty($q1) || empty($q2) || empty($q3) || empty($budget) || empty($itemNames) || empty($itemCosts)) {
     $error = true;
     $errorText = 'must fill all required fields';
   }
