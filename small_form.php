@@ -17,7 +17,7 @@ $userRow=mysql_fetch_array(mysql_query("SELECT * FROM accounts WHERE ID= '".$_SE
 //set post data to php variables
 //will be more useful later when we validate user entry
 if(isset($_POST['submit'])) {
-	$name = $userRow['name']; // htmlspecialchars($_POST['name']);
+	$name = htmlspecialchars($_POST['name']); // htmlspecialchars($_POST['name']);
 	$email = $userRow['email']; // htmlspecialchars($_POST['email']);
 	$building = htmlspecialchars($_POST['building']);
 	$date = htmlspecialchars($_POST['date']);
@@ -32,8 +32,8 @@ if(isset($_POST['submit'])) {
 	$budget = htmlspecialchars($_POST['budget']);
 	//Arrays cannot be put in SQL tables, so they must be converted into a string, 
 	//which can later be decoded back to an array in php using the unserialize() function
-	$itemNames = serialize(htmlspecialchars($_POST['itemName']));
-	$itemCosts = serialize(htmlspecialchars($_POST['itemCost']));
+	$itemNames = serialize($_POST['itemName']);
+	$itemCosts = serialize($_POST['itemCost']);
 
 	//form validation, makes sure nothiing is empty. Add more later
 	if(empty($building) || empty($date) || empty($time) || empty($location) || empty($title) || empty($description) || empty($learningObjective) || empty($q1) || empty($q2) || empty($q3) || empty($budget) || empty($itemNames) || empty($itemCosts)) {
@@ -69,9 +69,9 @@ if(isset($_POST['submit'])) {
 		
 		<!-- Name values are selectors for posting to php -->
 		<form class="ui form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
-			<!-- <label>Name</label>
+			<label>Name</label>
 			<input type="text" name="name"/><br>
-			<label>RPI Email</label>
+			<!-- <label>RPI Email</label>
 			<input type="text" name="email"/><br> -->
 			<label>Building</label>
 			<input type="text" name="building"/><br>

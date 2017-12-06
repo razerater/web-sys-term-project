@@ -140,7 +140,7 @@ $userRow=mysql_fetch_array(mysql_query("SELECT * FROM accounts WHERE ID= '".$_SE
                 if($count >= 1) {
                   echo('<div class="ten wide column"><form action="view_small_forms.php" method="POST"');
                   echo('<a class="title">'.$smallFormMatch['title'].'</a>');
-                  echo(' From: <a>'.$smallFormMatch['name'].'</a>');
+                  echo(' from: <a>'.$smallFormMatch['name'].' '.'</a>');
                   echo('<input type="hidden" value="'.$smallFormMatch['ID'].'"  name="data"/>');
                   echo('<input type="submit" value="view event" name="view"/>');
                   echo('<br></form></div>');
@@ -193,7 +193,7 @@ $userRow=mysql_fetch_array(mysql_query("SELECT * FROM accounts WHERE ID= '".$_SE
                 if($count >= 1) {
                   echo('<div class="ten wide column"><form action="view_big_forms.php" method="POST"');
                   echo('<a class="title">'.$bigFormMatch['title'].'</a>');
-                  echo(' name: <a>'.$bigFormMatch['name'].'</a>');
+                  echo(' from: <a>'.$bigFormMatch['name'].' '.'</a>');
                   echo('<input type="hidden" value="'.$bigFormMatch['ID'].'"  name="data"/>');
                   echo('<input type="submit" value="view event" name="view"/>');
                   echo('<br></form></div>');

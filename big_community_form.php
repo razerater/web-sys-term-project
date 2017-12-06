@@ -13,10 +13,13 @@ require_once 'dbconnect.php';
 $error = false;
 $errorText = '';
 
+$userRow=mysql_fetch_array(mysql_query("SELECT * FROM accounts WHERE ID= '".$_SESSION['user']."'"));
+
 //set post data to php variables
 //will be more useful later when we validate user entry
 if(isset($_POST['submit'])) {
-	$name = $userRow['name']; // htmlspecialchars($_POST['name']);
+	$name = htmlspecialchars($_POST['name']); 
+	$email = $userRow['email'];
 	$building = htmlspecialchars($_POST['building']);
 	$date = htmlspecialchars($_POST['date']);
 	$time = htmlspecialchars($_POST['time']);
@@ -28,15 +31,15 @@ if(isset($_POST['submit'])) {
 	$budget = htmlspecialchars($_POST['budget']);
 	//Arrays cannot be put in SQL tables, so they must be converted into a string, 
 	//which can later be decoded back to an array in php using the unserialize() function
-	$itemNames = serialize(htmlspecialchars($_POST['itemName']));
-	$itemCosts = serialize(htmlspecialchars($_POST['itemCost']));
+	$itemNames = serialize($_POST['itemName']);
+	$itemCosts = serialize($_POST['itemCost']);
 	$additional = htmlspecialchars($_POST['additional']);
 
 	//form validation, makes sure nothiing is empty. Add more later
 
 	//if no error run sql code, small_program_proposals is the table name, need new table for each form type
 	if(!$error) {
-		$sql = "INSERT INTO big_program_proposals (name, building, `date`, `time`, location, title, description, learningOutcomes, budget, itemNames, itemCosts, additional) VALUES ('$name','$building','$date','$time','$location','$title','$description','$learningOutcomes','$budget','$itemNames','$itemCosts', '$additional')";
+		$sql = "INSERT INTO big_program_proposals (name, email, building, `date`, `time`, location, title, description, learningOutcomes, budget, itemNames, itemCosts, additional) VALUES ('$name','$email', '$building','$date','$time','$location','$title','$description','$learningOutcomes','$budget','$itemNames','$itemCosts', '$additional')";
 		if(!mysql_query($sql)) {	//if the sql is bad it prints an error, else it just runs the script
 			die('Error: ' . mysql_error());
 		}
@@ -64,8 +67,8 @@ if(isset($_POST['submit'])) {
 		
 		<!-- Name values are selectors for posting to php -->
 		<form class="ui form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
-			<!-- <label>Name</label>
-			<input type="text" name="name"/><br> -->
+			<label>Name</label>
+			<input type="text" name="name"/><br>
 			<label>Building</label>
 			<input type="text" name="building"/><br>
 			<label>Program Date</label>
