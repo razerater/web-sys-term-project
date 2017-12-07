@@ -73,11 +73,11 @@ if(isset($_POST['submit'])) {
 					<input type="time" name="time"/><br><br>
 
 					<label>Program Location</label><br>
-					<input type="radio" name="location" value="EC-4" checked> EC 4 (2 rooms holding 45 people in each, plus outdoor space)<br>
-					<input type="radio" name="location" value="Bray"> Bray Classroom (max 30 people)<br>
-					<input type="radio" name="location" value="Cary"> Cary (max 30 people)<br>
+					<input type="radio" name="location" value="EC-4" checked>EC 4 (2 rooms holding 45 people in each, plus outdoor space)<br>
+					<input type="radio" name="location" value="Bray">Bray Classroom (max 30 people)<br>
+					<input type="radio" name="location" value="Cary">Cary (max 30 people)<br>
 					<input type="radio" name="location" value="DCC"> DCC Classroom (large programs)<br>
-					<input type="radio" name="location" value="Accademy Hall"> Academy Hall Auditorium (max 75 people)<br><br>
+					<input type="radio" name="location" value="Accademy Hall">Academy Hall Auditorium (max 75 people)<br><br>
 
 					<label>Class Year Program is Designed For</label>
 					<select name="classYear">
@@ -86,7 +86,7 @@ if(isset($_POST['submit'])) {
 						<option value="third">Third Years</option>
 						<option value="fourth">Fourth Years</option>
 						<option value="mix">Mix of years (describe below)</option>
-					</select> <br>
+					</select><br>
 
 					<br><label>What section of the CLASS curricular experience will this program support and enhance?</label>
 					<select name="curricularExperience">
