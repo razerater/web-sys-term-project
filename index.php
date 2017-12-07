@@ -4,7 +4,9 @@
 		<meta charset="UTF-8">
 		<title>Welcome to RPI ResLife Assistant!</title>
 		<link rel="stylesheet" href="resources/index.css" type="text/css" />
-		<link rel="stylesheet" href="resources/header.css" type="text/css" />
+		<link rel="stylesheet" href="resources/header_footer.css" type="text/css" />
+		<!-- font awesome version 4.7.0 -->
+		<link rel="stylesheet" type="text/css" href="resources/font-awesome/css/font-awesome.min.css">
 	</head>
 	<body>
 		<div id="header">
@@ -40,10 +42,21 @@
 			<a class="white-link" href="partner_proposal_form.php">Click here for submitting an idea</a>
 			</div>
 		</div>
-		
-
 		<div id="footer">
-			
+			<div id="footer-text">
+				<nav class="footList">
+					<a class="footLink" href="about.html">About us</a> | 
+					<a class="footLink" href="login.html">Login</a> | 
+					<a class="footLink" href="signup.html">Register</a> |
+					<a class="footLink" href="contact.html">Contact us</a> |   
+					<a class="footLink" href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook-square fa-lg" aria-hidden="true" title="Friend us on Facebook!"></i></a>
+					<a class="footLink" href="https://twitter.com" target="_blank"><i class="fa fa-twitter-square fa-lg" aria-hidden="true" title="Follow us on Twitter!"></i></a>
+					<a class="footLink" href="https://www.linkedin.com" target="_blank"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true" title="Connect with us on LinkedIn!"></i></a>
+				</nav>
+				<div id="copyright">
+					&copy; RPI ResLife Assistant
+				</div>
+			</div>
 		</div>
 	</body>
 </html>

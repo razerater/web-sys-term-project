@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<title>RA/RD/AD--Login</title>
 		<link rel="stylesheet" href="resources/login.css" type="text/css" />
-		<link rel="stylesheet" href="resources/header.css" type="text/css" />
+		<link rel="stylesheet" href="resources/header_footer.css" type="text/css" />
 	</head>
 	<body>
 		<div id="header">
@@ -42,10 +42,21 @@
           		<button type="button" class="login-registerNow" onclick="location.href='signup.php'">Sign Up Now!</button>
 			</div>
 		</div>
-		
-
 		<div id="footer">
-			
+			<div id="footer-text">
+				<nav class="footList">
+					<a class="footLink" href="about.html">About us</a> | 
+					<a class="footLink" href="login.html">Login</a> | 
+					<a class="footLink" href="signup.html">Register</a> |
+					<a class="footLink" href="contact.html">Contact us</a> |   
+					<a class="footLink" href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook-square fa-lg" aria-hidden="true" title="Friend us on Facebook!"></i></a>
+					<a class="footLink" href="https://twitter.com" target="_blank"><i class="fa fa-twitter-square fa-lg" aria-hidden="true" title="Follow us on Twitter!"></i></a>
+					<a class="footLink" href="https://www.linkedin.com" target="_blank"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true" title="Connect with us on LinkedIn!"></i></a>
+				</nav>
+				<div id="copyright">
+					&copy; RPI ResLife Assistant
+				</div>
+			</div>
 		</div>
 	</body>
 	
