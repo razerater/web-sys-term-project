@@ -43,7 +43,7 @@ $userRow=mysql_fetch_array(mysql_query("SELECT * FROM accounts WHERE ID= '".$_SE
                   echo('"><i class="write square icon"></i>Small Community Form</div>');
                   echo('<div class="item" onclick="location.href='."'big_community_form.php';");
                   echo('"><i class="write square icon"></i>Big Community Form</div>');
-                  echo('<div class="item" onclick="location.href='."'program_assessment.php';");
+                  echo('<div class="item" onclick="location.href='."'program_evaluation.php';");
                   echo('"><i class="write square icon"></i>Program Assessment Form</div>');
                   echo('</div>');
                   echo('</div>');

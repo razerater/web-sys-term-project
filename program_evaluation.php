@@ -4,10 +4,10 @@ ob_start();
 require_once 'dbconnect.php';
 
 //uncomment after linking to dashboard, makes sure the user is still logged in
-// if(!isset($_SESSION['user'])) {
-// 	header("Location: login.php");
-// 	exit;
-// }
+if(!isset($_SESSION['user'])) {
+	header("Location: login.php");
+	exit;
+}
 
 $error = false;
 $errorText = '';
@@ -52,7 +52,7 @@ if(isset($_POST['submit'])) {
 	</head>
 	<body>
 		<div class="singleform">
-		<h2>Staff Post Program Assessment</h2>
+		<h2>Student Program Assessment</h2>
 		<!-- Name values are selectors for posting to php -->
 		<div class="ui raised very padded text container segment">
 		<form class="ui form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">

@@ -15,8 +15,8 @@ $errorText = '';
 //set post data to php variables
 //will be more useful later when we validate user entry
 if(isset($_POST['submit'])) {
-	$name = $userRow['name']; // htmlspecialchars($_POST['name']);
-	// $email = $_POST['email'];
+	$name = htmlspecialchars($_POST['name']); 
+	$email = htmlspecialchars($_POST['email']);
 	$building = htmlspecialchars($_POST['building']);
 	$date = htmlspecialchars($_POST['date']);
 	// $time = $_POST['time'];
@@ -37,17 +37,17 @@ if(isset($_POST['submit'])) {
 	// $itemCosts = serialize($_POST['itemCost']);
 
 	//form validation, makes sure nothiing is empty. Add more later
-	if(empty($building) || empty($date) || empty($title) || empty($description) || empty($pre1) || empty($pre2) || empty($pre3) || empty($post1) || empty($post2) || empty($post3)) {
-		$error = true;
-		$errorText = 'must fill all required fields';
-	}
+	// if(empty($building) || empty($date) || empty($title) || empty($description) || empty($pre1) || empty($pre2) || empty($pre3) || empty($post1) || empty($post2) || empty($post3)) {
+	// 	$error = true;
+	// 	$errorText = 'must fill all required fields';
+	// }
 	//if no error run sql code, small_program_proposals is the table name, need new table for each form type
 	if(!$error) {
 		$sql = "INSERT INTO program_assessments (name, email, building, `date`, title, description, pre1, pre2, pre3, post1, post2, post3) VALUES ('$name','$email','$building','$date','$title','$description','$pre1','$pre2','$pre3','$post1','$post2','$post3')";
 		if(!mysql_query($sql)) {	//if the sql is bad it prints an error, else it just runs the script
 			die('Error: ' . mysql_error());
 		}
-		header("Location: dashboard.php");	//moves user back to dashboard
+		header("Location: index.php");	//moves user back to index
 	} else {
 		echo($errorText);
 	}
@@ -70,8 +70,10 @@ if(isset($_POST['submit'])) {
 		
 		<!-- Name values are selectors for posting to php -->
 		<form class="ui form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
-			<!-- <label>Name</label>
-			<input type="text" name="name"/><br> -->
+			<label>Name</label>
+			<input type="text" name="name"/><br>
+			<label>Email</label>
+			<input type="text" name="email"/><br>
 			<label>Building</label>
 			<select id="building" name="building">
 				<option value="barton">Barton Hall</option>
