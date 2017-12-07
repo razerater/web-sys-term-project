@@ -37,7 +37,7 @@ if(isset($_POST['submit'])) {
 		if(!mysql_query($sql)) {	//if the sql is bad it prints an error, else it just runs the script
 			die('Error: ' . mysql_error());
 		}
-		header("Location: landing.php");	//moves user back to dashboard
+		header("Location: index.php");	//moves user back to dashboard
 	} else {
 		echo($errorText);
 	}
@@ -57,59 +57,59 @@ if(isset($_POST['submit'])) {
 	</head>
 	<body>
 		<div class="singleform">
-		<h2>Campus Partners Program Proposal</h2>
-		<!-- Name values are selectors for posting to php -->
-		<div class="ui raised very padded text container segment">
-		<form class="form ui" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
-			<!-- <label>Your Name</label>
-			<input type="text" name="name"/><br>
-			<label>RPI Email</label>
-			<input type="text" name="email"/><br> -->
-			<label>Department</label>
-			<input type="text" name="department"/><br>
-			<label>Program Date</label>
-			<input type="date" name="date"/><br>
-			<label>Program Time</label>
-			<input type="time" name="time"/><br><br>
+			<h2>Campus Partners Program Proposal</h2>
+			<!-- Name values are selectors for posting to php -->
+			<div class="ui raised very padded text container segment">
+				<form class="form ui" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+					<!-- <label>Your Name</label>
+					<input type="text" name="name"/><br>
+					<label>RPI Email</label>
+					<input type="text" name="email"/><br> -->
+					<label>Department</label>
+					<input type="text" name="department"/><br>
+					<label>Program Date</label>
+					<input type="date" name="date"/><br>
+					<label>Program Time</label>
+					<input type="time" name="time"/><br><br>
 
-			<label>Program Location</label><br>
-			<input type="radio" name="location" value="EC-4" checked> EC 4 (2 rooms holding 45 people in each, plus outdoor space)<br>
-			<input type="radio" name="location" value="Bray"> Bray Classroom (max 30 people) <br>
-			<input type="radio" name="location" value="Carry"> Carry (max 30 people) <br>
-			<input type="radio" name="location" value="DCC"> DCC Classroom(large programs) <br>
-			<input type="radio" name="location" value="Accademy Hall"> Academy Hall Auditorium (max 75 people) <br><br>
+					<label>Program Location</label><br>
+					<input type="radio" name="location" value="EC-4" checked> EC 4 (2 rooms holding 45 people in each, plus outdoor space)<br>
+					<input type="radio" name="location" value="Bray"> Bray Classroom (max 30 people)<br>
+					<input type="radio" name="location" value="Cary"> Cary (max 30 people)<br>
+					<input type="radio" name="location" value="DCC"> DCC Classroom (large programs)<br>
+					<input type="radio" name="location" value="Accademy Hall"> Academy Hall Auditorium (max 75 people)<br><br>
 
-			<label>Class Year Program is Designed For</label>
-			<select name="classYear">
-				<option value="first">First Years</option>
-				<option value="second">Second Years</option>
-				<option value="third">Third Years</option>
-				<option value="fourth">Fourth Years</option>
-				<option value="mix">Mix of years (describe bellow)</option>
-			</select> <br>
+					<label>Class Year Program is Designed For</label>
+					<select name="classYear">
+						<option value="first">First Years</option>
+						<option value="second">Second Years</option>
+						<option value="third">Third Years</option>
+						<option value="fourth">Fourth Years</option>
+						<option value="mix">Mix of years (describe below)</option>
+					</select> <br>
 
-			<br><label>What section of the CLASS currecular experience will this program support and enhance?</label>
-			<select name="curricularExperience">
-				<option value="MCGP">Multicultural Sophistication and Global Perspective</option>
-				<option value="HESA">Health and Emotional Self-Awareness</option>
-				<option value="PIR">Problem Identification and Resolution</option>
-				<option value="CCE">Campus Community Engagement</option>
-				<option value="IA">Intelectual Agility</option>
-			</select><br><br>
+					<br><label>What section of the CLASS curricular experience will this program support and enhance?</label>
+					<select name="curricularExperience">
+						<option value="MCGP">Multicultural Sophistication and Global Perspective</option>
+						<option value="HESA">Health and Emotional Self-Awareness</option>
+						<option value="PIR">Problem Identification and Resolution</option>
+						<option value="CCE">Campus Community Engagement</option>
+						<option value="IA">Intelectual Agility</option>
+					</select><br><br>
 
-			<label>Program Description</label><br>
-			<textarea name="description" rows="4" cols="50"></textarea><br>
-			<label>Two to Four Learning Objectives</label><br>
-			<textarea name="learningObjectives" rows="4" cols="50"></textarea><br>
-			<label>How will this program be assesed?</label><br>
-			<textarea name="assessed" rows="4" cols="50"></textarea><br>
-			<lable>Additional Additional Student Living and Learning support needed. Please be specific</lable><br>
-			<textarea name="SLLsupport" rows="4" cols="50"></textarea><br>
-			<lable>Additional Comments/Information</lable><br>
-			<textarea name="additional" rows="4" cols="50"></textarea><br>
-			<input class="ui primary button submitbutton" type="submit" value="Submit" name="submit">
-		</form>
-	  </div>
-	 </div>
+					<label>Program Description</label><br>
+					<textarea name="description" rows="4" cols="50"></textarea><br>
+					<label>Two to Four Learning Objectives</label><br>
+					<textarea name="learningObjectives" rows="4" cols="50"></textarea><br>
+					<label>How will this program be assesed?</label><br>
+					<textarea name="assessed" rows="4" cols="50"></textarea><br>
+					<lable>Additional Additional Student Living and Learning support needed. Please be specific</lable><br>
+					<textarea name="SLLsupport" rows="4" cols="50"></textarea><br>
+					<lable>Additional Comments/Information</lable><br>
+					<textarea name="additional" rows="4" cols="50"></textarea><br>
+					<input class="ui primary button submitbutton" type="submit" value="Submit" name="submit">
+				</form>
+			</div>
+		</div>
 	</body>
 </html>
