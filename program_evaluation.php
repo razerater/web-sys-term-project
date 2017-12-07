@@ -4,10 +4,6 @@ ob_start();
 require_once 'dbconnect.php';
 
 //uncomment after linking to dashboard, makes sure the user is still logged in
-if(!isset($_SESSION['user'])) {
-	header("Location: login.php");
-	exit;
-}
 
 $error = false;
 $errorText = '';

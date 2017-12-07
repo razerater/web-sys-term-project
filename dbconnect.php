@@ -4,7 +4,7 @@ error_reporting( ~E_DEPRECATED & ~E_NOTICE );
 
 define('DB_NAME', 'websys_project');
 define('DB_USER', 'root');
-define('DB_PASSWORD', 'JjA135246!');
+define('DB_PASSWORD', '');
 define('DB_HOST', 'localhost');
 
 $link = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
