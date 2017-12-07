@@ -15,8 +15,8 @@ $errorText = '';
 //set post data to php variables
 //will be more useful later when we validate user entry
 if(isset($_POST['submit'])) {
-	$name = $userRow['name']; // htmlspecialchars($_POST['name']);
-	$email = $userRow['email']; // htmlspecialchars($_POST['email']);
+	$name = htmlspecialchars($_POST['name']); // htmlspecialchars($_POST['name']);
+	$email = htmlspecialchars($_POST['email']); // htmlspecialchars($_POST['email']);
 	$department = htmlspecialchars($_POST['department']);
 	$date = htmlspecialchars($_POST['date']);
 	$time = htmlspecialchars($_POST['time']);
@@ -61,10 +61,10 @@ if(isset($_POST['submit'])) {
 			<!-- Name values are selectors for posting to php -->
 			<div class="ui raised very padded text container segment">
 				<form class="form ui" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
-					<!-- <label>Your Name</label>
+					<label>Your Name</label>
 					<input type="text" name="name"/><br>
 					<label>RPI Email</label>
-					<input type="text" name="email"/><br> -->
+					<input type="text" name="email"/><br>
 					<label>Department</label>
 					<input type="text" name="department"/><br>
 					<label>Program Date</label>
