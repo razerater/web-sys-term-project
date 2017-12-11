@@ -28,7 +28,7 @@
 					<li class="nav-item"><a class="nav-item" href="activityCalendar.php">Activity Calendar</a></li>
 					<li class="nav-item"><a class="nav-item" href="partner_proposal_form.php">General Form</a></li>
 					<li class="nav-item"><a class="nav-item" href="program_evaluation.php">Evaluation Form</a></li>
-					<li class="nav-item"><a class="nav-item" href="contactUs.php">Contact RPI ResLife</a></li>
+					<li class="nav-item"><a class="nav-item" href="https://webforms.rpi.edu/contact-student-living-learning">Contact RPI ResLife</a></li>
 				</ul>
 			</div>
 		</div>
