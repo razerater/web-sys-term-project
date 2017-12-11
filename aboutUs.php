@@ -4,7 +4,7 @@
 	<link rel="stylesheet" href="resources/index.css" type="text/css" />
 	<link rel="stylesheet" href="resources/about.css" type="text/css" />
 	<link rel="stylesheet" href="resources/header_footer.css" type="text/css" />
-	<title>About Student Living & Learning</title>
+	<title>About Student Living &amp; Learning</title>
 </head>
 <body>
 	<div id="header">
@@ -21,13 +21,14 @@
 
 		<!-- The navigation bar -->
 		<div id="nav-bar">
-			<ul id="nav-list">
-				<li class="nav-item"><a class="nav-item" href="aboutUs.php">About ResLife</a></li>
-				<li class="nav-item"><a class="nav-item" href="activityCalendar.php">Activity Calendar</a></li>
-				<li class="nav-item"><a class="nav-item" href="generalForm.php">General Form</a></li>
-				<li class="nav-item"><a class="nav-item" href="contactUs.php">Contact RPI ResLife</a></li>
-			</ul>
-		</div>
+				<ul id="nav-list">
+					<li class="nav-item"><a class="nav-item" href="aboutUs.php">About ResLife</a></li>
+					<li class="nav-item"><a class="nav-item" href="activityCalendar.php">Activity Calendar</a></li>
+					<li class="nav-item"><a class="nav-item" href="partner_proposal_form.php">General Form</a></li>
+					<li class="nav-item"><a class="nav-item" href="program_evaluation.php">Evaluation Form</a></li>
+					<li class="nav-item"><a class="nav-item" href="https://webforms.rpi.edu/contact-student-living-learning">Contact RPI ResLife</a></li>
+				</ul>
+			</div>
 	</div>
 
 	<div id = "about_content">
