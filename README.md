@@ -1,8 +1,29 @@
-  Team Prime (team 1) developed Residence Life Assistant (RLA). Currently, the Resident Life staff consisting of Resident Assistants (RAs), Resident Directors (RDs), and Assistant Deans (ADs) has to go through one very unintuitive website in order to submit program proposals. Plus, there is no instant way for RAs and RDs to know if their programs were approved by the ADs. There are multiple forms to fill out, and it is easy for someone who is not a staff member of the Student Living & Learning office to submit proposals. There is also no room for improvement in the current website. 
-	RLA is the solution to this. It is an account based website for RAs, RDs, ADs, and anyone who wants to put on a program. It is specialized per person - only RAs, RDs, and ADs can make accounts, while the general populous can submit program proposals for their organizations through a different form on the website. RAs and RDs have personalized dashboards with their necessary information, consisting of any announcements from ADs and the status of their programs. The RAs and RDs can also submit program proposals using an easy-to-use internal form. The RAs can submit small community proposals, the RDs can submit small and big community proposals, and everyone can access the discussion forums. The forums are saved in a database and can be viewed later. ADs then can review the forms, and approve of them. They can also view the discussion forums as well, and can send out announcements to the RAs and RDs. This will be easier to use than the current system.  
-  
-  Please create a database then upload websys_project.sql into phpmyadmin. Next edit the dbconnect.php file with the database name you created and your user and password for MySQL. Navigate to index.php and create and RA or RD account to create forms, then create an AD account to view the forms created by RAs and RDs. The student evaluation form does not require the user to be logged in to submit.
+Please create a database then upload websys_project.sql into phpmyadmin. Next edit the dbconnect.php file with the database name you created and your user and password for MySQL. Navigate to index.php and create and RA or RD account to create forms, then create an AD account to view the forms created by RAs and RDs. The student evaluation form does not require the user to be logged in to submit.
 
+The use case diagram included in the folder details operation flow
+
+Overall, this project went well. The team had a lot of synergy, and the problem 
+was one that exists in Rensselaer's campus today. 
+
+In terms of what went right with the project, the actual code fulfilled the requirements of the project. Users 
+can log in and create accounts depending on their role on staff. Three different kinds of accounts can be made: 
+Resident Assistants (RAs), Resident Directors (RDs), and Assistant Deans (ADs). The RAs and RDs can submit program
+proposals while the ADs review them. The same can be done with program evaluation. The HTML and CSS is valid, 
+and the PHP fulfills the functions it has to as it connects to a database with several different tables. A user
+dashboard pulls information from the tables in the database, and displays the right tables for the right users.
+
+One scope change that had been established in the project was of the Google Calendar. The team did not have enough
+time to implement all the features which would have been nice-to-have for the project. A Google Calendar with 
+ResLife events would have been nice-to-have, but the team could not establish it in the time avaliable. 
+
+If the team were to do the project again, the requirements would have been clearly defined from the beginning 
+as stated during the presentation. The schedule would have also been followed in order to include nice-to-have
+features. Authentication with the Rensselaer CAS system would have been integrated as well, in order 
+to keep track of which students were making accounts. 
+
+All in all, the project was a success. It fulfilled everything it set out to do, and the team learned a lot 
+during the process. Working with the team was great, and everyone were able to help each other when needed. 
+Thank you for the oppurtunity! 
 
 
 
