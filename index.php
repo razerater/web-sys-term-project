@@ -45,10 +45,10 @@
 		<div id="footer">
 			<div id="footer-text">
 				<nav class="footList">
-					<a class="footLink" href="about.html">About us</a> | 
-					<a class="footLink" href="login.html">Login</a> | 
-					<a class="footLink" href="signup.html">Register</a> |
-					<a class="footLink" href="contact.html">Contact us</a> |   
+					<a class="footLink" href="aboutUs.php">About us</a> | 
+					<a class="footLink" href="login.php">Login</a> | 
+					<a class="footLink" href="signup.php">Register</a> |
+					<a class="footLink" href="https://webforms.rpi.edu/contact-student-living-learning">Contact us</a> |   
 					<a class="footLink" href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook-square fa-lg" aria-hidden="true" title="Friend us on Facebook!"></i></a>
 					<a class="footLink" href="https://twitter.com" target="_blank"><i class="fa fa-twitter-square fa-lg" aria-hidden="true" title="Follow us on Twitter!"></i></a>
 					<a class="footLink" href="https://www.linkedin.com" target="_blank"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true" title="Connect with us on LinkedIn!"></i></a>

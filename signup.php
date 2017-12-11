@@ -22,7 +22,7 @@
 					<li class="nav-item"><a class="nav-item" href="activityCalendar.php">Activity Calendar</a></li>
 					<li class="nav-item"><a class="nav-item" href="partner_proposal_form.php">General Form</a></li>
 					<li class="nav-item"><a class="nav-item" href="program_evaluation.php">Evaluation Form</a></li>
-					<li class="nav-item"><a class="nav-item" href="contactUs.php">Contact RPI ResLife</a></li>
+					<li class="nav-item"><a class="nav-item" href="https://webforms.rpi.edu/contact-student-living-learningp">Contact RPI ResLife</a></li>
 				</ul>
 			</div>
 		</div>
@@ -56,10 +56,10 @@
 		<div id="footer">
 			<div id="footer-text">
 				<nav class="footList">
-					<a class="footLink" href="about.html">About us</a> | 
-					<a class="footLink" href="login.html">Login</a> | 
-					<a class="footLink" href="signup.html">Register</a> |
-					<a class="footLink" href="contact.html">Contact us</a> |   
+					<a class="footLink" href="aboutUs.php">About us</a> | 
+					<a class="footLink" href="login.php">Login</a> | 
+					<a class="footLink" href="signup.php">Register</a> |
+					<a class="footLink" href="https://webforms.rpi.edu/contact-student-living-learning">Contact us</a> |   
 					<a class="footLink" href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook-square fa-lg" aria-hidden="true" title="Friend us on Facebook!"></i></a>
 					<a class="footLink" href="https://twitter.com" target="_blank"><i class="fa fa-twitter-square fa-lg" aria-hidden="true" title="Follow us on Twitter!"></i></a>
 					<a class="footLink" href="https://www.linkedin.com" target="_blank"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true" title="Connect with us on LinkedIn!"></i></a>
