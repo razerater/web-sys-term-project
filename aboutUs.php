@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<link rel="stylesheet" href="resources/index.css" type="text/css" />
+	<link rel="stylesheet" href="resources/about.css" type="text/css" />
 	<link rel="stylesheet" href="resources/header_footer.css" type="text/css" />
+	<title>About Student Living & Learning</title>
 </head>
 <body>
 	<div id="header">
 		<div id="red-top"></div>
 		<div id="header-block">
 			<div id="logo">
-				<a href="index.php"><img src="resources/images/RPIlogo.png" alt="logo";"></a>
+				<a href="index.php"><img src="resources/images/RPIlogo.png" alt="logo"></a>
 			</div>
 			<div id="login-topRight">
 				<a class="white-link" href="login.php">RA/RD/AD Log in</a><br>
@@ -32,6 +34,22 @@
 		<!-- This should all be centered text. --> 
 		<h2>What is this?</h2>
 		<p>This is a website desigend for the Office of Student Living and Learning of Rensselaer Polytechnic Institute.</p>
+		<p>Residence Life Assistant is a personalized website meant for student-staff and full-time staff in the Office of Student Living and Learning.</p>
+		<p>It provides an experience dependent on what role the staff member is, and provides the paperwork necessary. The right staff can approve this paperwork as well. </p>
+		
+		<h2>Who made it? </h2>
+		<p>Team PRIME is a group spawned out of Web Systems Development Fall 2017. The team developed this project after identifying a problem found at Rensselaer.</p>
+		<p>The team delivers quality products for all the clients they have. The following list of values is what the team employs in all their projects: </p>
+		<ul id = "prime_list">
+		  <p class = "prime_item">The team has <em>P</em>assion, and applies that to all the projects they are assigned.</li> 
+		  <p class = "prime_item">The team <em>R</em>espects our clients, ourselves, and our projects.</li> 
+		  <p class = "prime_item">The team has <em>I</em>ntegrity, as all our products are built from the ground up with care.</li> 
+		  <p class = "prime_item">The team is <em>M</em>esmerizing, as our clients are awed at what we produce.</li> 
+		  <p class = "prime_item">The team attains <em>E</em>xcellence in everything it produces, and exceeds all the objectives of our clients.</li>
+		</ul>
+		
+		<h2>Student Living and Learning Information</h2>
+		<p>Student Living & Learning is the focus for student housing programs related to living and dining at Rensselaer. In addition to providing clean, comfortable, and well-maintained residence halls and apartments, Student Living & Learning strives to build a community that values the potential of each individual and encourages students to broaden their perspectives, enhance personal growth, and prepare for life beyond Rensselaer.</p> 
 	</div>
 	
 	
